@@ -11,12 +11,122 @@ int main()
 
     // logicOperate();
 
-    bitOperate();
+   //  bitOperate();
+
+   //  asignmentOperate();
+
+   // otherOperate();
+
+   operatorPriority();
+}
+
+void operatorPriority(){
+      int a = 20;
+   int b = 10;
+   int c = 15;
+   int d = 5;
+   int e;
+ 
+   e = (a + b) * c / d;      // ( 30 * 15 ) / 5
+   printf("(a + b) * c / d 的值是 %d\n",  e );
+ 
+   e = ((a + b) * c) / d;    // (30 * 15 ) / 5
+   printf("((a + b) * c) / d 的值是 %d\n" ,  e );
+ 
+   e = (a + b) * (c / d);   // (30) * (15/5)
+   printf("(a + b) * (c / d) 的值是 %d\n",  e );
+ 
+   e = a + (b * c) / d;     //  20 + (150/5)
+   printf("a + (b * c) / d 的值是 %d\n" ,  e );
+
+}
+
+void otherOperate(){
+   int a = 4;
+   short b;
+   double c;
+   int* ptr;
+ 
+   /* sizeof 运算符实例 */
+   printf("Line 1 - 变量 a 的大小 = %lu\n", sizeof(a) );
+   printf("Line 2 - 变量 b 的大小 = %lu\n", sizeof(b) );
+   printf("Line 3 - 变量 c 的大小 = %lu\n", sizeof(c) );
+ 
+   /* & 和 * 运算符实例 */
+   ptr = &a;    /* 'ptr' 现在包含 'a' 的地址 */
+   printf("a 的值是 %d\n", a);
+   printf("*ptr 是 %d\n", *ptr);
+ 
+   /* 三元运算符实例 */
+   a = 10;
+   b = (a == 1) ? 20: 30;
+   printf( "b 的值是 %d\n", b );
+ 
+   b = (a == 10) ? 20: 30;
+   printf( "b 的值是 %d\n", b );
+}
+
+void asignmentOperate(){
+   int a = 21;
+   int c ;
+ 
+   c =  a;
+   printf("Line 1 - =  运算符实例，c 的值 = %d\n", c );
+ 
+   c +=  a;
+   printf("Line 2 - += 运算符实例，c 的值 = %d\n", c );
+ 
+   c -=  a;
+   printf("Line 3 - -= 运算符实例，c 的值 = %d\n", c );
+ 
+   c *=  a;
+   printf("Line 4 - *= 运算符实例，c 的值 = %d\n", c );
+ 
+   c /=  a;
+   printf("Line 5 - /= 运算符实例，c 的值 = %d\n", c );
+ 
+   c  = 200;
+   c %=  a;
+   printf("Line 6 - %%= 运算符实例，c 的值 = %d\n", c );
+ 
+   c <<=  2;
+   printf("Line 7 - <<= 运算符实例，c 的值 = %d\n", c );
+ 
+   c >>=  2;
+   printf("Line 8 - >>= 运算符实例，c 的值 = %d\n", c );
+ 
+   c &=  2;
+   printf("Line 9 - &= 运算符实例，c 的值 = %d\n", c );
+ 
+   c ^=  2;
+   printf("Line 10 - ^= 运算符实例，c 的值 = %d\n", c );
+ 
+   c |=  2;
+   printf("Line 11 - |= 运算符实例，c 的值 = %d\n", c );
 }
 
 void bitOperate(){
-    
-
+       unsigned int a = 60;    /* 60 = 0011 1100 */  
+   unsigned int b = 13;    /* 13 = 0000 1101 */
+   int c = 0;           
+ 
+   c = a & b;       /* 12 = 0000 1100 */ 
+   printf("Line 1 - c 的值是 %d\n", c );
+ 
+   c = a | b;       /* 61 = 0011 1101 */
+   printf("Line 2 - c 的值是 %d\n", c );
+ 
+   c = a ^ b;       /* 49 = 0011 0001 */
+   printf("Line 3 - c 的值是 %d\n", c );
+ 
+   c = ~a;          /*-61 = 1100 0011 */
+   printf("Line 4 - c 的值是 %d\n", c );
+ 
+   c = a << 2;     /* 240 = 1111 0000 */
+   printf("Line 5 - c 的值是 %d\n", c );
+ 
+   c = a >> 2;     /* 15 = 0000 1111 */
+   printf("Line 6 - c 的值是 %d\n", c );
 }
 
 void logicOperate(){
